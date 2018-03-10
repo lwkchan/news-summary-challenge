@@ -1,3 +1,3 @@
-function Article() {
-  this.headline = "";
+function Article(headline) {
+  this.headline = headline;
 }
