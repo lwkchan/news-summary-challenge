@@ -1,4 +1,5 @@
 function Article(jsonObj) {
-  this.webTitle = jsonObj.webTitle;
-  this.sectionName = jsonObj.sectionName;
+  this.headline = jsonObj.webTitle;
+  this.publicationDate = jsonObj.webPublicationDate;
+  this.url = jsonObj.webUrl;
 }
