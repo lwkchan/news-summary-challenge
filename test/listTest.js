@@ -17,7 +17,7 @@ describe('List', function(){
     var article1 = sinon.spy();
     var article2 = sinon.spy();
     list.add([article1, article2]);
-    expect(list.articles.count).to.include(article1);
-    expect(list.articles.count).to.include(article2);
+    expect(list.articles).to.include(article1);
+    expect(list.articles).to.include(article2);
   })
 })
