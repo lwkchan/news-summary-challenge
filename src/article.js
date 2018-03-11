@@ -1,3 +1,4 @@
-function Article(headline) {
-  this.headline = headline;
+function Article(jsonObj) {
+  this.webTitle = jsonObj.webTitle;
+  this.sectionName = jsonObj.sectionName;
 }
