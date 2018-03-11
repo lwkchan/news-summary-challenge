@@ -2,9 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>News Summaries</title>
+    <script type="text/javascript" src="src/list.js">
+    </script>
+    <script type="text/javascript" src="src/article.js">
+    </script>
+    <script type="text/javascript" src="src/getNews.js">
+    </script>
   </head>
   <body>
     hello world
+    <div id="articles"></div>
   </body>
+  <script type="text/javascript">
+
+    var articles = getNews('test/newsstub.json').then(function(result){
+      var obj = JSON.parse(result);
+      return obj.response;
+    }).then(function(response){
+      return response.results;
+    }).catch(function(error){
+      console.log(error);
+    });
+
+    var list = new List(articles);
+
+
+
+  </script>
 </html>
