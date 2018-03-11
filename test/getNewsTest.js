@@ -14,7 +14,7 @@ describe('getNews', function(){
       var obj = JSON.parse(result);
       expect(obj).to.have.property('response')
     }).catch(function(error){
-      assert.fail();
+      assert.fail(error);
     });
   });
 
