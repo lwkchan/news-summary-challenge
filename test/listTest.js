@@ -14,8 +14,10 @@ describe('List', function(){
   });
 
   it('add() adds the specified object to the articles array', function(){
-    var article = sinon.spy();
-    list.add(article);
-    expect(list.articles.count).to.include(article);
+    var article1 = sinon.spy();
+    var article2 = sinon.spy();
+    list.add([article1, article2]);
+    expect(list.articles.count).to.include(article1);
+    expect(list.articles.count).to.include(article2);
   })
 })
