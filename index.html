@@ -11,23 +11,27 @@
     </script>
   </head>
   <body>
-    hello world
     <div id="articles"></div>
   </body>
   <script type="text/javascript">
+  var list = new List();
 
-    var articles = getNews('test/newsstub.json').then(function(result){
+    getNews('test/newsstub.json').then(function(result){
       var obj = JSON.parse(result);
       return obj.response;
     }).then(function(response){
-      return response.results;
+      list.add(response.results);
+      for (var i in list.articles){
+        var article = new Article(list.articles[i]);
+        var liElement = document.createElement("LI");
+        var headline = document.createTextNode(article.headline);
+        liElement.appendChild(headline);
+        liElement.setAttribute("id", "article-" + i);
+        document.getElementById('articles').appendChild(liElement)
+      }
     }).catch(function(error){
       console.log(error);
     });
-
-    var list = new List(articles);
-
-
 
   </script>
 </html>
