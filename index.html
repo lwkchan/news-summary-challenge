@@ -23,11 +23,20 @@
       list.add(response.results);
       for (var i in list.articles){
         var article = new Article(list.articles[i]);
-        var liElement = document.createElement("LI");
+
+        var div = document.createElement("div");
+        div.setAttribute("id", "article-" + i);
+
+        var headlineLi = document.createElement("li");
+        var headlineA = document.createElement("a");
+        headlineA.setAttribute("href", article.url)
         var headline = document.createTextNode(article.headline);
-        liElement.appendChild(headline);
-        liElement.setAttribute("id", "article-" + i);
-        document.getElementById('articles').appendChild(liElement)
+        headlineA.appendChild(headline);
+        headlineLi.appendChild(headlineA);
+
+        div.appendChild(headlineLi);
+
+        document.getElementById('articles').appendChild(div);
       }
     }).catch(function(error){
       console.log(error);
