@@ -16,7 +16,7 @@
   <script type="text/javascript">
   var list = new List();
 
-    getNews('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search').then(function(result){
+    getNews('https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search').then(function(result){
       var obj = JSON.parse(result);
       return obj.response;
     }).then(function(response){
