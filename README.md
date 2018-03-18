@@ -1,10 +1,10 @@
 # News Summary challenge
 
-Completed this as sixth weekend challenge at Makers Academy.
+Completed this as sixth weekend challenge at Makers Academy. Hosted on https://lwkchan.github.io/news-summary-challenge/. Please note that the API is quite slow, so might take a little while to load.
 
 ## How to use
 
-Prerequisite - ensure you have Node on your machine
+Prerequisite - ensure you have Node and the Bundler Ruby gem on your machine.
 
 1. Clone this repo
 2. In the command line, change into this repo and run ```http-server``` or ```node_modules/http-server/bin/http-server ```
@@ -13,9 +13,7 @@ Prerequisite - ensure you have Node on your machine
 ### To test
 
 * To test units, open unitTestRunner.html in your browser.
-* To test feature, run ```http-server``` or ```node_modules/http-server/bin/http-server ``` in your command line. Open another tab in your command line and run ```mocha test/newsSummaryFeature.js```.
-    *NB - this feature test is still a work in progress. See comments in newsSummaryFeature.js for more details*
-    *As the API key provided can only work a limited amount of times, replace the API link in line 19 of index.html with 'test/newstub.json'.**
+* To test features, run ```bundle``` to install the necessary Ruby gems for testing. Next, run ```http-server``` or ```node_modules/http-server/bin/http-server ``` in your command line. Open another tab in your command line and run ```rspec```
 
 ## User Stories
 
