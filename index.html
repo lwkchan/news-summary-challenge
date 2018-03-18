@@ -11,12 +11,14 @@
     </script>
   </head>
   <body>
+    <h1>News Summaries</h1>
     <div id="articles"></div>
   </body>
   <script type="text/javascript">
   var list = new List();
+  var url = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search';
 
-    getNews('https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search').then(function(result){
+    getNews(url).then(function(result){
       var obj = JSON.parse(result);
       return obj.response;
     }).then(function(response){
