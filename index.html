@@ -16,7 +16,8 @@
   </body>
   <script type="text/javascript">
   var list = new List();
-  var url = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search';
+  // var url = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search';
+  var url = './js-test/newsstub.json'
 
     getNews(url).then(function(result){
       var obj = JSON.parse(result);
