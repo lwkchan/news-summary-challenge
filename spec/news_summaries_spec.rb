@@ -10,13 +10,13 @@ feature 'News Summaries' do
 
   it 'Article links are displayed' do
     visit('/')
-    find_link('Private school teacher banned for using racist language').visible?
+    find_link('Trump and Juncker under fire for hailing Putin election victory').visible?
   end
 
   it 'Clicking on the link directs user to the website' do
     visit('/')
-    click_on('Private school teacher banned for using racist language')
-    expect(page.current_url).to eq('https://www.theguardian.com/education/2018/mar/09/private-school-teacher-banned-oundle-school-racist-language')
+    click_on('Trump and Juncker under fire for hailing Putin election victory')
+    expect(page.current_url).to eq('https://www.theguardian.com/uk-news/2018/mar/20/tories-attack-junckers-nauseating-letter-congratulating-putin')
   end
 
   it 'has an image for each article' do
