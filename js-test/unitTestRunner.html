@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <script type="text/javascript" src="../src/list.js">
+    </script>
+    <script type="text/javascript" src="../src/article.js">
+    </script>
+    <script type="text/javascript" src="../src/getNews.js">
+    </script>
+
+    <!-- load your test files here -->
+
+    <script type="text/javascript" src="./listTest.js">
+    </script>
+    <script type="text/javascript" src="./articleTest.js">
+    </script>
+    <script type="text/javascript" src="./getNewsTest.js">
+    </script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
