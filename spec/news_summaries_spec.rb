@@ -1,6 +1,6 @@
 # Using js-test/newsstub.json as test case
 
-NUMBER_OF_ARTICLES = 10;
+NUMBER_OF_ARTICLES = 9;
 
 feature 'News Summaries' do
   it 'News summaries are on home root' do
