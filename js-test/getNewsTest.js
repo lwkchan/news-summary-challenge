@@ -3,7 +3,7 @@ var assert = chai.assert;
 
 describe('getNews', function(){
 
-  const link = './test/newsstub.json';
+  const link = './js-test/newsstub.json';
 
   it('returns a promise', function(){
     expect(getNews(link)).to.be.an.instanceof(Promise);
@@ -27,7 +27,7 @@ describe('getNews', function(){
     }).then(function(articles){
       return articles[0];
     }).then(function(topArticle){
-      expect(topArticle.webTitle).to.equal('Private school teacher banned for using racist language');
+      expect(topArticle.webTitle).to.equal('Trump and Juncker under fire for hailing Putin election victory');
     }).catch(function(error){
       assert.fail(error);
     });
