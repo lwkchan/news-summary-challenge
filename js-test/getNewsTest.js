@@ -3,7 +3,7 @@ var assert = chai.assert;
 
 describe('getNews', function(){
 
-  const link = './js-test/newsstub.json';
+  const link = './newsstub.json';
 
   it('returns a promise', function(){
     expect(getNews(link)).to.be.an.instanceof(Promise);
