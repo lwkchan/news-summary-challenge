@@ -8,7 +8,7 @@ feature 'News Summaries' do
 
   it 'Article links are displayed' do
     visit('/')
-    expect(page).to have_content('https://www.theguardian.com/education/2018/mar/09/private-school-teacher-banned-oundle-school-racist-language')
+    find_link('https://www.theguardian.com/education/2018/mar/09/private-school-teacher-banned-oundle-school-racist-language').visible?
   end
 
   it 'Clicking on the link directs user to the website' do
