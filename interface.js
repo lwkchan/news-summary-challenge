@@ -11,6 +11,7 @@ var url = './js-test/newsstub.json'
       var article = new Article(list.articles[i]);
 
       var div = document.createElement("div");
+      div.setAttribute("class", "article")
       div.setAttribute("id", "article-" + i);
 
       var headlineLi = document.createElement("li");
@@ -20,9 +21,14 @@ var url = './js-test/newsstub.json'
       headlineA.appendChild(headline);
       headlineLi.appendChild(headlineA);
 
-      div.appendChild(headlineLi);
+      var articleImage = document.createElement("img");
+      articleImage.setAttribute("src", article.imageUrl);
+      articleImage.setAttribute("id", "image-" + i)
 
-      document.getElementById('articles').appendChild(div);
+      div.appendChild(headlineLi);
+      div.appendChild(articleImage);
+
+      document.getElementById('list').appendChild(div);
     }
   }).catch(function(error){
     console.log(error);
