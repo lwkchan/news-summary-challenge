@@ -4,7 +4,7 @@ Completed this as sixth weekend challenge at Makers Academy. Hosted on https://l
 
 ## How to use
 
-Prerequisite - ensure you have Node and the Bundler Ruby gem on your machine.
+Prerequisite - ensure you have Node and the Bundler Ruby gem on your machine. You will also need selenium-webdriver if you want to run the feature tests.
 
 1. Clone this repo
 2. In the command line, change into this repo and run ```http-server``` or ```node_modules/http-server/bin/http-server ```
