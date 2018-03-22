@@ -9,7 +9,7 @@ var url = './js-test/newsstub.json'
     list.add(response.results);
     for (var i in list.articles){
       var article = new Article(list.articles[i]);
-
+      
       var div = document.createElement("div");
       div.setAttribute("class", "article")
       div.setAttribute("id", "article-" + i);
@@ -20,12 +20,11 @@ var url = './js-test/newsstub.json'
       var headline = document.createTextNode(article.headline);
       headlineA.appendChild(headline);
       headlineLi.appendChild(headlineA);
+      div.appendChild(headlineLi);
 
       var articleImage = document.createElement("img");
       articleImage.setAttribute("src", article.imageUrl);
       articleImage.setAttribute("id", "image-" + i)
-
-      div.appendChild(headlineLi);
       div.appendChild(articleImage);
 
       document.getElementById('list').appendChild(div);
