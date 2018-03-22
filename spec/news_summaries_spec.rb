@@ -19,6 +19,11 @@ feature 'News Summaries' do
     expect(page.current_url).to eq('https://www.theguardian.com/uk-news/2018/mar/20/tories-attack-junckers-nauseating-letter-congratulating-putin')
   end
 
+  it 'Shows a short summary for an article' do
+    visit('/')
+    expect(page).to have_content(	"Donald Trump and Jean-Claude Juncker have broken ranks with western disapproval for Vladimir Putin, issuing their congratulations to the Russian leader for his electoral success even as diplomats were flown out of the UK in retribution for the Salisbury nerve agent attack.")
+  end
+
   it 'has an image for each article' do
     visit('/')
     counter = 1
