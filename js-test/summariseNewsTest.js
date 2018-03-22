@@ -5,33 +5,35 @@ describe('summariseNews', function(){
 
   const link = 'https://www.theguardian.com/uk-news/2018/mar/20/tories-attack-junckers-nauseating-letter-congratulating-putin'
 
-  it('returns a promise', function(){
-    expect(summariseNews(link)).to.be.an.instanceof(Promise)
+  it('returns an API response which has a sentences property', function(){
+    return (summariseNews(link)).then(function(result){
+      return result.json();
+    }).then(function(json){
+      expect(json).to.have.property('sentences')
+    }).catch(function(error){
+      assert.fail(error)
+    })
   });
 
-  describe('the API response', function(){
-
-    it('returns an API response which has a sentences property', function(){
-      return(summariseNews(link)).then(function(result){
-        expect(result).to.have.property('sentences')
-      }).catch(function(error){
-        assert.fail(error)
-      })
-    });
-
-    it('the sentences property is an array of strings', function(){
-      return(summariseNews(link)).then(function(result){
-        return result.sentences
-      }).then(function(sentences){
-        expect(sentences).to.be.instanceof(Array);
-        for(var i in sentences){
-          expect(sentences[i]).to.be.instanceof(String)
-        }
-      }).catch(function(error){
-        assert.fail(error)
-      })
+  it('returns an array', function(){
+    return(summariseNews(link)).then(function(result){
+      return result.json();
+    }).then(function(json){
+      expect(json.sentences).to.be.instanceof(Array)
+    }).catch(function(error){
+      assert.fail(error)
     })
+  })
 
+  it('returns a summary of the news story', function(){
+    return(summariseNews(link)).then(function(result){
+      return result.json();
+    }).then(function(json){
+      expect(json.sentences[0]).to.equal('Donald Trump and Jean-Claude Juncker have broken ranks with western disapproval for Vladimir Putin, issuing their congratulations to the Russian leader for his electoral success even as diplomats were flown out of the UK in retribution for the Salisbury nerve agent attack.')
+    }).catch(function(error){
+      console.log(error)
+      assert.fail(error)
+    })
   })
 
 })
