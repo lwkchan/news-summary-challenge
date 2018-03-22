@@ -30,6 +30,12 @@ As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
+
+```
+As a busy politician
+I can see a picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
+```
 ## My approach
 
 1. I first diagrammed out what how I wanted my program to interact with the user and with the Guardian API.
@@ -67,12 +73,6 @@ client                program                  API
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
-```
-
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
 ```
 
 ```
