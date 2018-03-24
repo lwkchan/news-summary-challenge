@@ -25,7 +25,7 @@ describe('Article', function(){
     expect(article.imageUrl).to.equal('https://media.guim.co.uk/92f774b19c5c2307522a571c68804ea581c596c7/0_153_4777_2866/500.jpg')
   });
 
-  it('has a summary attribute', function(){
-    expect(article).to.have.property('summary')
+  it('the summarise function returns a sentence of the summary of the article', function(){
+    expect(article.summarise()).to.equal("Donald Trump and Jean-Claude Juncker have broken ranks with western disapproval for Vladimir Putin, issuing their congratulations to the Russian leader for his electoral success even as diplomats were flown out of the UK in retribution for the Salisbury nerve agent attack.")
   });
 });
