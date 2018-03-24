@@ -5,3 +5,13 @@ function Article(jsonObj) {
   this.imageUrl = jsonObj.fields.thumbnail;
   this.summary = "";
 }
+
+Article.prototype.summarise = function(){
+  var article = this;
+  var requestUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + this.url;
+  return fetch(requestUrl).then(function(response){
+    return response.json()
+  }).then(function(json){
+    article.summary = json.sentences[0]
+  })
+}

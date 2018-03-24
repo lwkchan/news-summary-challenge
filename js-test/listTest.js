@@ -23,7 +23,8 @@ describe('List', function(){
   })
 
   it("getNews function adds articles from the api to list.articles", function(){
-    return list.getNews('./newsstub.json').then(function(){
+    return list.getNews('./newsstub.json')
+    .then(function(){
       expect(list.articles[0]).to.be.an.instanceof(Article)
     })
   })
