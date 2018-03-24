@@ -23,5 +23,9 @@ describe('Article', function(){
 
   it('imageUrl attribute returns a string denoting the article image thumbnail source', function(){
     expect(article.imageUrl).to.equal('https://media.guim.co.uk/92f774b19c5c2307522a571c68804ea581c596c7/0_153_4777_2866/500.jpg')
-  })
+  });
+
+  it('has a summary attribute', function(){
+    expect(article).to.have.property('summary')
+  });
 });
