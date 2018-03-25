@@ -42,7 +42,7 @@ describe('List', function(){
   it("passing Promises.all on the list.articleSummaryPromises array generates the news summaries", function(){
     return list.getNews('./newsstub.json')
     .then(
-    return list.generateArticlePromises()
+    return list.generateSummaryPromises()
     )
     .then(function(){
     return Promise.all(list.articleSummaryPromises)
