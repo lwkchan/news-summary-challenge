@@ -28,4 +28,16 @@ describe('List', function(){
       expect(list.articles[0]).to.be.an.instanceof(Article)
     })
   })
+
+  it("summarise articles function adds summaries to the articles stored in articles attribute", function(){
+    var article = { summarise: function(){} }
+    var spy = sinon.spy(article, "summarise");
+    return list.getNews('./newsstub.json')
+    .then(function(result){
+      list.summariseArticles()
+    })
+    .then(function(result){
+      expect(spy.callCount).to.eql(9)
+    })
+  })
 })
