@@ -30,7 +30,7 @@ describe('List', function(){
   })
 
   it("summarise articles function adds summaries to the articles stored in articles attribute", function(done){
-    list.getNews()
+    return list.getNews()
     .then(
     list.summariseArticles()
     ).then(function(){
