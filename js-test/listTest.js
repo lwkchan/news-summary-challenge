@@ -1,4 +1,5 @@
 var expect = chai.expect;
+var newsStub = './newsstub.json'
 
 describe('List', function(){
 
@@ -23,19 +24,31 @@ describe('List', function(){
   })
 
   it("getNews function adds articles from the api to list.articles", function(){
-    return list.getNews('./newsstub.json')
+    return list.getNews(newsStub)
     .then(function(){
       expect(list.articles[0]).to.be.an.instanceof(Article)
     })
   })
 
-  it("summarise articles function adds summaries to the articles stored in articles attribute", function(done){
-    return list.getNews()
+  it("generateArticlePromises stores articles in the articleSummaryPromises attribute", function(){
+    return list.getNews('./newsstub.json')
     .then(
-    list.summariseArticles()
+    list.generateArticlePromises()
     ).then(function(){
-      expect(list.articles[0].summary).to.equal("Donald Trump and Jean-Claude Juncker have broken ranks with western disapproval for Vladimir Putin, issuing their congratulations to the Russian leader for his electoral success even as diplomats were flown out of the UK in retribution for the Salisbury nerve agent attack.")
-      done()
+      expect(list.articleSummaryPromises.count).to.equal(10)
     })
+  })
+
+  it("passing Promises.all on the list.articleSummaryPromises array generates the news summaries", function(){
+    return list.getNews('./newsstub.json')
+    .then(
+    return list.generateArticlePromises()
+    )
+    .then(function(){
+    return Promise.all(list.articleSummaryPromises)
+    })
+    .then(
+      expect(list.articles[0].summary).to.be.an.instanceOf(String)
+    )
   })
 })
