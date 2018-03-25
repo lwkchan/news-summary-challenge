@@ -13,5 +13,7 @@ Article.prototype.summarise = function(){
     return response.json()
   }).then(function(json){
     self.summary = json.sentences[0]
+  }).catch(function(error){
+    console.log(error)
   })
 }
