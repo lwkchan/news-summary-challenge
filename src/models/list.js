@@ -34,9 +34,8 @@ List.prototype.getNews = function(url){
 }
 
 List.prototype.generateSummaryPromises = function(){
-  var list = this;
-  for (var i in list.articles){
-    var promise = list.articles[i].summarise();
-    list.articleSummaryPromises.push(promise)
+  for (var i in this.articles){
+    var promise = this.articles[i].summarise();
+    this.articleSummaryPromises.push(promise)
   }
 }
