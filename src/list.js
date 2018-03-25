@@ -31,3 +31,14 @@ List.prototype.getNews = function(url){
     req.send();
   });
 }
+
+List.prototype.summariseArticles = function(){
+  var index = 0;
+  var self = this;
+  function next() {
+    if (index < self.articles.length) {
+        (self.articles[index++].summarise()).then(next());
+      }
+    }
+    next();
+}

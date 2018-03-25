@@ -7,11 +7,11 @@ function Article(jsonObj) {
 }
 
 Article.prototype.summarise = function(){
-  var article = this;
+  var self = this;
   var requestUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + this.url;
   return fetch(requestUrl).then(function(response){
     return response.json()
   }).then(function(json){
-    article.summary = json.sentences[0]
+    self.summary = json.sentences[0]
   })
 }

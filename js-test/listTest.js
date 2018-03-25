@@ -29,15 +29,13 @@ describe('List', function(){
     })
   })
 
-  it("summarise articles function adds summaries to the articles stored in articles attribute", function(){
-    var article = { summarise: function(){} }
-    var spy = sinon.spy(article, "summarise");
-    return list.getNews('./newsstub.json')
-    .then(function(result){
-      list.summariseArticles()
-    })
-    .then(function(result){
-      expect(spy.callCount).to.eql(9)
+  it("summarise articles function adds summaries to the articles stored in articles attribute", function(done){
+    list.getNews()
+    .then(
+    list.summariseArticles()
+    ).then(function(){
+      expect(list.articles[0].summary).to.equal("Donald Trump and Jean-Claude Juncker have broken ranks with western disapproval for Vladimir Putin, issuing their congratulations to the Russian leader for his electoral success even as diplomats were flown out of the UK in retribution for the Salisbury nerve agent attack.")
+      done()
     })
   })
 })

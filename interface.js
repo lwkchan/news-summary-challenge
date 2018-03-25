@@ -5,14 +5,7 @@ var url = './js-test/newsstub.json'
   list.getNews(url).then(function(response){
 
     function summariseArticles(array) {
-      var index = 0;
-      function next() {
-        if (index < array.length) {
-
-            (array[index++].summarise()).then(next());
-          }
-        }
-        next();
+  
       }
 
     summariseArticles(list.articles);
