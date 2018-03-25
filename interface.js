@@ -3,12 +3,16 @@ var list = new List()
 var url = './js-test/newsstub.json'
 
 list.getNews(url)
-.then(function(){
-  list.summariseArticles()
+.then(function(result){
+  return list.generateSummaryPromises()
 })
 .then(function(){
+  return Promise.all(list.articleSummaryPromises)
+})
+.then(function(){
+    console.log(JSON.stringify(list.articles[1]))
+    console.log(2, list.articles)
     for (var i in list.articles){
-    console.log(JSON.stringify(list.articles))
     var article = list.articles[i];
 
     var div = document.createElement("div");

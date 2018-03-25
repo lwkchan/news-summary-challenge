@@ -1,5 +1,6 @@
 function List() {
   this.articles = [];
+  this.articleSummaryPromises = []
 }
 
 List.prototype.add = function(article){
@@ -32,13 +33,10 @@ List.prototype.getNews = function(url){
   });
 }
 
-List.prototype.summariseArticles = function(){
-  var index = 0;
-  var self = this;
-  function next() {
-    if (index < self.articles.length) {
-        (self.articles[index++].summarise()).then(next());
-      }
-    }
-    next();
+List.prototype.generateSummaryPromises = function(){
+  var list = this;
+  for (var i in list.articles){
+    var promise = list.articles[i].summarise();
+    list.articleSummaryPromises.push(promise)
+  }
 }
