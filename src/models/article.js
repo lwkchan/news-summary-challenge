@@ -1,4 +1,5 @@
-function Article(jsonObj) {
+(function(exports){
+  function Article(jsonObj) {
   this.headline = jsonObj.webTitle;
   this.publicationDate = jsonObj.webPublicationDate;
   this.url = jsonObj.webUrl;
@@ -16,4 +17,4 @@ Article.prototype.summarise = function(){
   }).catch(function(error){
     console.log(error)
   })
-}
+})(this);

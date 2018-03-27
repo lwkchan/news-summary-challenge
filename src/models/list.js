@@ -1,3 +1,4 @@
+(function(exports){
 function List() {
   this.articles = [];
   this.articleSummaryPromises = []
@@ -38,4 +39,4 @@ List.prototype.generateSummaryPromises = function(){
     var promise = this.articles[i].summarise();
     this.articleSummaryPromises.push(promise)
   }
-}
+})(this);
