@@ -1,6 +1,6 @@
 var list = new List()
 // var url = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search';
-var url = './js-test/newsstub.json'
+var url = '/spec/js-test/newsstub.json'
 
 list.getNews(url)
 .then(function(result){

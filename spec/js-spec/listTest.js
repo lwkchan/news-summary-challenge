@@ -1,5 +1,5 @@
 var expect = chai.expect;
-var newsStub = './newsstub.json'
+var newsStub = 'spec/js-spec/newsstub.json'
 
 describe('List', function(){
 
@@ -31,24 +31,24 @@ describe('List', function(){
   })
 
   it("generateArticlePromises stores articles in the articleSummaryPromises attribute", function(){
-    return list.getNews('./newsstub.json')
-    .then(
-    list.generateArticlePromises()
-    ).then(function(){
-      expect(list.articleSummaryPromises.count).to.equal(10)
+    return list.getNews(newsStub)
+    .then(function(){
+    list.generateSummaryPromises()
+    }).then(function(){
+      expect(list.articleSummaryPromises.length).to.equal(10)
     })
   })
 
   it("passing Promises.all on the list.articleSummaryPromises array generates the news summaries", function(){
-    return list.getNews('./newsstub.json')
-    .then(
-    return list.generateSummaryPromises()
-    )
+    return list.getNews(newsStub)
+    .then(function(){
+    list.generateSummaryPromises()
+    })
     .then(function(){
     return Promise.all(list.articleSummaryPromises)
     })
-    .then(
+    .then(function(){
       expect(list.articles[0].summary).to.be.an.instanceOf(String)
-    )
+    })
   })
 })
