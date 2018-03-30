@@ -6,12 +6,12 @@ describe('NewsController', function(){
 
   beforeEach(function(){
     var mockList = {
-      getNews: function(){
-         return Promise.resolve('News retrieved')
-       },
-       generateSummaryPromises: function(){
-         return Promise.resolve('Summary promises Generated')
-       }
+      getNews: function(url){
+        return Promise.resolve('News retrieved')
+      },
+      generateSummaryPromises: function(){
+        return Promise.resolve('Summary promises Generated')
+      }
      };
     var mockNewsView = { render: function(){ return "Rendered" } };
     newsController = new NewsController(mockList, mockNewsView)
