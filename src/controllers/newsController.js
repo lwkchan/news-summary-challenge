@@ -11,16 +11,14 @@
   NewsController.prototype.retrieveNews = function(url){
     var list = this.list
     var newsView = this.newsView
-    return new Promise(function(resolve){
-      list.getNews(url).then(function(){
+    return list.getNews(url).then(function(){
         return list.generateSummaryPromises()
-      }).then(function(summaryPromises){
-        resolve(summaryPromises)
+      }).then(function(){
+        return Promise.all(list.articleSummaryPromises)
       }).catch(function(error){
-        reject(error)
+        console.log(error)
       })
-    })
-  }
+    },
 
   exports.NewsController = NewsController;
 
