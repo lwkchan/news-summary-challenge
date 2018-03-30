@@ -8,12 +8,11 @@
     articlesHtml = ""
     for (var i in list.articles){
       var article = list.articles[i];
-      console.log(article)
       var template = [
         `<div class="article" id="article-${i}">`,
         `<li><a href="${article.url}">${article.headline}</a></li>`,
         `<img src="${article.imageUrl}" id="image-${i}">`,
-        `<p>${article.summary}</p></div>"`
+        `<p>${article.summary}</p></div>`
       ];
       articlesHtml += template.join("");
     };

@@ -35,15 +35,11 @@
   };
 
   List.prototype.generateSummaryPromises = function(){
-    console.log("generating...")
-    console.log(this.articles)
     var list = this
     for (var i in list.articles){
       var article = list.articles[i];
       var promise = article.summarise();
-      console.log('promise', promise)
       list.articleSummaryPromises.push(article.summarise())
-      console.log('article', list.articleSummaryPromises)
     }
   };
 

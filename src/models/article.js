@@ -8,7 +8,6 @@
 };
 
 Article.prototype.summarise = function(){
-  console.log('summarising')
   var self = this;
   var requestUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + this.url;
   return fetch(requestUrl)
@@ -16,7 +15,6 @@ Article.prototype.summarise = function(){
     return response.json()
   })
   .then(function(json){
-    console.log(json)
     self.summary = json.sentences[0]
   }).catch(function(error){
     console.log(error)

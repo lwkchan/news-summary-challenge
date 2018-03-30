@@ -1,5 +1,5 @@
 var expect = chai.expect;
-var newsStub = 'spec/js-spec/newsstub.json'
+var newsStub = 'spec/newsstub.json'
 
 describe('List', function(){
 
