@@ -12,7 +12,7 @@
     var list = this.list
     var newsView = this.newsView
     return new Promise(function(resolve){
-      list.getNews().then(function(){
+      list.getNews(url).then(function(){
         return list.generateSummaryPromises()
       }).then(function(summaryPromises){
         resolve(summaryPromises)
