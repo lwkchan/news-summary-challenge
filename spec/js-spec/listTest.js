@@ -1,54 +1,52 @@
-var expect = chai.expect;
+var expect = chai.expect
 var newsStub = 'spec/newsstub.json'
 
-describe('List', function(){
+describe('List', function () {
+  var list
 
-  var list;
-
-  beforeEach(function(){
-    list = new List();
-  });
-
-
-  it('is instantiated with an articles attribute, which is an array', function(){
-    expect(list.articles).to.be.an.instanceof(Array);
-  });
-
-  it('add() adds the specified object to the articles array', function(){
-    var article1 = sinon.spy();
-    var article2 = sinon.spy();
-    list.add(article1);
-    list.add(article2);
-    expect(list.articles).to.include(article1);
-    expect(list.articles).to.include(article2);
+  beforeEach(function () {
+    list = new List()
   })
 
-  it("getNews function adds articles from the api to list.articles", function(){
-    return list.getNews(newsStub)
-    .then(function(){
-      expect(list.articles[0]).to.be.an.instanceof(Article)
-    })
+  it('is instantiated with an articles attribute, which is an array', function () {
+    expect(list.articles).to.be.an.instanceof(Array)
   })
 
-  it("generateArticlePromises stores articles in the articleSummaryPromises attribute", function(){
-    return list.getNews(newsStub)
-    .then(function(){
-    list.generateSummaryPromises()
-    }).then(function(){
-      expect(list.articleSummaryPromises.length).to.equal(10)
-    })
+  it('add() adds the specified object to the articles array', function () {
+    var article1 = sinon.spy()
+    var article2 = sinon.spy()
+    list.add(article1)
+    list.add(article2)
+    expect(list.articles).to.include(article1)
+    expect(list.articles).to.include(article2)
   })
 
-  it("passing Promises.all on the list.articleSummaryPromises array generates the news summaries", function(){
+  it('getNews function adds articles from the api to list.articles', function () {
     return list.getNews(newsStub)
-    .then(function(){
-    list.generateSummaryPromises()
-    })
-    .then(function(){
-    return Promise.all(list.articleSummaryPromises)
-    })
-    .then(function(){
-      expect(list.articles[0].summary).to.be.an.instanceOf(String)
-    })
+      .then(function () {
+        expect(list.articles[0]).to.be.an.instanceof(Article)
+      })
+  })
+
+  it('generateArticlePromises stores articles in the articleSummaryPromises attribute', function () {
+    return list.getNews(newsStub)
+      .then(function () {
+        list.generateSummaryPromises()
+      }).then(function () {
+        expect(list.articleSummaryPromises.length).to.equal(10)
+      })
+  })
+
+  it('passing Promises.all on the list.articleSummaryPromises array generates the news summaries', function () {
+    return list.getNews(newsStub)
+      .then(function () {
+        list.generateSummaryPromises()
+      })
+      .then(function () {
+        return Promise.all(list.articleSummaryPromises)
+      })
+      .then(function () {
+        expect(list.articles[0].summary).to.be.an.instanceOf(String)
+      })
   })
 })

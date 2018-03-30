@@ -1,31 +1,30 @@
 var expect = chai.expect
 
-describe('NewsController', function(){
-
+describe('NewsController', function () {
   var newsController
 
-  beforeEach(function(){
+  beforeEach(function () {
     var mockList = {
-      getNews: function(url){
+      getNews: function (url) {
         return Promise.resolve('News retrieved')
       },
-      generateSummaryPromises: function(){
+      generateSummaryPromises: function () {
         return Promise.resolve('Summary promises Generated')
       }
-     };
-    var mockNewsView = { render: function(){ return "Rendered" } };
+    }
+    var mockNewsView = { render: function () { return 'Rendered' } }
     newsController = new NewsController(mockList, mockNewsView)
   })
 
-  it('tells the newsView object to render the page with the right headlines', function(){
-    expect(newsController.renderPage()).to.equal("Rendered");
+  it('tells the newsView object to render the page with the right headlines', function () {
+    expect(newsController.renderPage()).to.equal('Rendered')
   })
 
-  it('retrieves the news from specified url and generates promises for retrieving article summaries', function(){
-    var url = 'spec/js-spec/newsstub.json';
+  it('retrieves the news from specified url and generates promises for retrieving article summaries', function () {
+    var url = 'spec/js-spec/newsstub.json'
     return newsController.retrieveNews(url)
-    .then(function(result){
-      expect(result).to.equal("Summary promises Generated")
-    })
+      .then(function (result) {
+        expect(result).to.equal('Summary promises Generated')
+      })
   })
 })
