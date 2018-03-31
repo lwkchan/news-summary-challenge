@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  top: 10%;
+  left: 40%;
+}
+#list {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: table;
+}
+img {
+  margin-top: 15px;
+}
+.article {
+  margin: 30px;
+  width: 500px;
+}
+li {
+  height: 33px;
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: bold;
+  display: table-row;
+  margin-bottom: 10px
+}
