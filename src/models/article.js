@@ -9,7 +9,7 @@
 
   Article.prototype.summarise = function () {
     var self = this
-    var requestUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + this.url
+    var requestUrl = 'https://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + this.url
     return fetch(requestUrl)
       .then(function (response) {
         return response.json()
