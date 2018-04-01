@@ -19,7 +19,6 @@ describe('NewsView', function () {
 
   it('render an html string which includes the headline details', function () {
     var render = newsView.render()
-    console.log(render)
     expect(render).to.contain('Headline')
     expect(render).to.contain('www.example.com')
   })
