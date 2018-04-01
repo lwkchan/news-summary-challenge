@@ -1,4 +1,4 @@
-var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"
+var url = "https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"
 // var url = 'spec/newsstub.json'
 window.onload = function () {
   var list = new List()
