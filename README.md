@@ -64,6 +64,9 @@ user                           program                               API
 5. Although I had finished most of my work by this time, and the user would have seen a finished product, I felt that I needed to refactor my code into an MVC framework in order to separate concerns. So, I test-drove the creation of a controller and a view, then refactored the code from interface.js into newsController.js and newsView.js.
 6. Finally, I added CSS to the page to make it more presentable.
 
+## Screenshot
+
+<img src="images/screenshot.png" width="600">
 
 ## Key learnings
 
