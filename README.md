@@ -36,6 +36,7 @@ As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
 ```
+
 ```
 As a busy politician
 I can see a summary of a news article
@@ -69,7 +70,7 @@ user                           program                               API
 * Asynchronous functions in JavaScript - namely Promises - and methods of testing these
 * Working with APIs
 * Mocha testing framework - with Chai assertions
-* Halfway into working on this project, I found that I could use the JavaScript [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to do the same thing as the XML Http Request promise in getNews.js. As such, you'll see that I used the fetch API in article.summarise() in article.js to test out its functionality.
+* Halfway into working on this project, I found that I could use the JavaScript [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to fetch resources from APIs (i.e. doing the same thing as the XMLHttpRequest in getNews.js). As such, you'll see that I used the Fetch API in article.summarise() in article.js to test out its functionality. I learned that the Fetch API is a simpler way to connect to APIs generally
 
 ## To complete
 
