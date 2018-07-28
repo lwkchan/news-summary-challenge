@@ -4,7 +4,7 @@ Completed this as sixth weekend challenge at Makers Academy. Hosted on https://l
 
 ## How to use
 
-Prerequisites - ensure you have Node and [http-server](https://www.npmjs.com/package/http-server). To run feature tests, you will need need selenium-webdriver, geckodriver and the Firefox browser if you want to run the feature tests (I used these on my own machine, but feel free to use alternatives).
+Prerequisites - ensure you have Node and [http-server](https://www.npmjs.com/package/http-server). To run feature tests, you will need need selenium, geckodriver and the Firefox browser.
 
 1. Clone this repo
 2. In the command line, change into this repo and run ```http-server```
